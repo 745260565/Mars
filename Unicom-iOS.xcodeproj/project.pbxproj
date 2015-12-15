@@ -12,6 +12,8 @@
 		1E272C6F1C1199FE007A1B20 /* DealProcessessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E272C6D1C1199FE007A1B20 /* DealProcessessTableViewCell.xib */; };
 		1ED3D4D11C1FF504001B2B85 /* libUMCheckUpdate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75ED31C101F3B00A17C36 /* libUMCheckUpdate.a */; };
 		1ED3D4D41C200516001B2B85 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3D4D31C200516001B2B85 /* DatabaseHelper.m */; };
+		1ED3D4D81C201B9C001B2B85 /* FMDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3D4D61C201B9C001B2B85 /* FMDBViewController.m */; };
+		1ED3D4D91C201B9C001B2B85 /* FMDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ED3D4D71C201B9C001B2B85 /* FMDBViewController.xib */; };
 		1ED4A6B61C1E6B5400844085 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4A6B51C1E6B5400844085 /* Images.xcassets */; };
 		1EE0D4C91C17D13F00A52A72 /* TabPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE0D4C81C17D13F00A52A72 /* TabPageController.m */; };
 		1EE0D4CC1C19157000A52A72 /* AccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE0D4CB1C19157000A52A72 /* AccordionView.m */; };
@@ -211,6 +213,9 @@
 		1E272C6D1C1199FE007A1B20 /* DealProcessessTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealProcessessTableViewCell.xib; sourceTree = "<group>"; };
 		1ED3D4D21C200516001B2B85 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
 		1ED3D4D31C200516001B2B85 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
+		1ED3D4D51C201B9C001B2B85 /* FMDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBViewController.h; sourceTree = "<group>"; };
+		1ED3D4D61C201B9C001B2B85 /* FMDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBViewController.m; sourceTree = "<group>"; };
+		1ED3D4D71C201B9C001B2B85 /* FMDBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMDBViewController.xib; sourceTree = "<group>"; };
 		1ED4A6B51C1E6B5400844085 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1EE0D4C71C17D13F00A52A72 /* TabPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabPageController.h; sourceTree = "<group>"; };
 		1EE0D4C81C17D13F00A52A72 /* TabPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabPageController.m; sourceTree = "<group>"; };
@@ -623,6 +628,9 @@
 				7D953E8C1C0C2C9B001243BE /* RSLeftMenuViewController.m */,
 				04D2BD621C103DEA004CCE92 /* RSSideViewController.h */,
 				04D2BD631C103DEA004CCE92 /* RSSideViewController.m */,
+				1ED3D4D51C201B9C001B2B85 /* FMDBViewController.h */,
+				1ED3D4D61C201B9C001B2B85 /* FMDBViewController.m */,
+				1ED3D4D71C201B9C001B2B85 /* FMDBViewController.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1172,6 +1180,7 @@
 				7D953FA41C0C2EF4001243BE /* breakdown_btn.png in Resources */,
 				7D953EF11C0C2D48001243BE /* LocationPatrolTableViewCell.xib in Resources */,
 				7D95400C1C0C2EF4001243BE /* sidebar_icon_setting.png in Resources */,
+				1ED3D4D91C201B9C001B2B85 /* FMDBViewController.xib in Resources */,
 				7D953FAA1C0C2EF4001243BE /* btn2_add_press@2x.png in Resources */,
 				7D953EE91C0C2D48001243BE /* CollectionDispatchTableViewCell.xib in Resources */,
 				7D953FDA1C0C2EF4001243BE /* ok-32-select.png in Resources */,
@@ -1268,6 +1277,7 @@
 				7D953EF01C0C2D48001243BE /* LocationPatrolTableViewCell.m in Sources */,
 				7D953E4E1C0BF6DD001243BE /* AppDelegate.m in Sources */,
 				1EE0D4C91C17D13F00A52A72 /* TabPageController.m in Sources */,
+				1ED3D4D81C201B9C001B2B85 /* FMDBViewController.m in Sources */,
 				7D953F0B1C0C2D48001243BE /* TransactOrderDetailViewController.m in Sources */,
 				7D8936811C0E9C640075D947 /* BatchLoadListViewController.m in Sources */,
 				7D953EFA1C0C2D48001243BE /* LayAsideDetailViewController.m in Sources */,
