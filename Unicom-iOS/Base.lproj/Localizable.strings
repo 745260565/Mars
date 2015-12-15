@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Unicom-iOS
+
+  Created by Franklin Zhang on 15/12/2.
+  Copyright © 2015年 Runsdata. All rights reserved.
+*/
+"Common.Yes"="是";
+"Common.No"="否";
+"Common.OK"="确定";
+"Common.Cancel"="取消";
+
+
+"Common.Success"="成功";
+"Common.Failure"="失败";
+
+"Common.Prompt"="提示";
+"Common.Warning"="警告";
+"Common.Waiting"="等待";
+"Common.Loading"="正在加载...";
+"Common.Connecting"="正在连接...";
+"Common.Signining"="正在登录...";
+"Common.Signuping"="正在注册...";
+"Common.Submitting"="正在提交...";
+"Common.Uploading"="正在上传...";
+"Common.Downloading"="正在下载...";
+"Common.Exit"="退出";
+"Done"="完成";
+
+"label.signin.title"="登录";
+
+"label.main.location_error_information"="定位出错，请检查是否已开启定位服务";
+"label.main.enable_location_information"="请开启定位服务!";

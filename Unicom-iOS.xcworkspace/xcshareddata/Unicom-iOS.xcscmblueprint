@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4d439830-928d-41b7-b243-5a4dd6a7c3a3++7108",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "4d439830-928d-41b7-b243-5a4dd6a7c3a3++7108" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4d439830-928d-41b7-b243-5a4dd6a7c3a3++7108" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E61A7FB4-8D3B-4EB1-BDE9-3EC1ECD945B3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4d439830-928d-41b7-b243-5a4dd6a7c3a3++7108" : "Mars\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Unicom-iOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Unicom-iOS.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/120.25.209.29\/work\/svn\/repositories\/mars",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4d439830-928d-41b7-b243-5a4dd6a7c3a3++7108"
+    }
+  ]
+}
