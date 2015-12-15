@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabPageController.h"
 
-@interface AlertAndAffectedSitesViewController : UIViewController
-
+@interface AlertAndAffectedSitesViewController : TabPageController<TabPageDataSource,TabPageHeaderDataSource,TabPageHeaderDelegate>
+@property (nonatomic,retain)NSString *orderId;
+@property (nonatomic,retain)NSString *orderCode;
 @end

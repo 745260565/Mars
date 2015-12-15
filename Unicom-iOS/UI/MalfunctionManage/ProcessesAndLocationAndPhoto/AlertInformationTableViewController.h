@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AlertInformationTableViewController : UITableViewController
-@property (nonatomic,retain)NSString *oredrCode;
+- (instancetype)initWithOrderCode:(NSString *)orderCode;
 @end

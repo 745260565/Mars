@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AffectedSitesViewController : UITableViewController
-@property (nonatomic,retain)NSString *orderId;
-@property (nonatomic,retain)NSString *orderCode;
+- (instancetype)initWithOrderId:(NSString *)orderId;
 @end

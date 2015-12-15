@@ -10,12 +10,14 @@
 		04D2BD641C103DEA004CCE92 /* RSSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D2BD631C103DEA004CCE92 /* RSSideViewController.m */; };
 		1E272C6E1C1199FE007A1B20 /* DealProcessessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E272C6C1C1199FE007A1B20 /* DealProcessessTableViewCell.m */; };
 		1E272C6F1C1199FE007A1B20 /* DealProcessessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E272C6D1C1199FE007A1B20 /* DealProcessessTableViewCell.xib */; };
+		1ED3D4D11C1FF504001B2B85 /* libUMCheckUpdate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75ED31C101F3B00A17C36 /* libUMCheckUpdate.a */; };
+		1ED3D4D41C200516001B2B85 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3D4D31C200516001B2B85 /* DatabaseHelper.m */; };
 		1ED4A6B61C1E6B5400844085 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4A6B51C1E6B5400844085 /* Images.xcassets */; };
 		1EE0D4C91C17D13F00A52A72 /* TabPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE0D4C81C17D13F00A52A72 /* TabPageController.m */; };
 		1EE0D4CC1C19157000A52A72 /* AccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE0D4CB1C19157000A52A72 /* AccordionView.m */; };
 		1EE3112A1C16F24800494ED7 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE311291C16F24800494ED7 /* BadgeView.m */; };
 		1EE804281C1E99B9001C2506 /* EstimateEquipmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE804271C1E99B9001C2506 /* EstimateEquipmentType.m */; };
-		1EE8042B1C1ECB26001C2506 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8042A1C1ECB26001C2506 /* DatabaseHelper.m */; };
+		1EE99B371C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE99B361C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.m */; };
 		6FF507FF7ACF1E640848DD46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DC86A79A659C8EC90E5B6C /* libPods.a */; };
 		7D1FEEAC1C10923D00A0F05E /* MalfunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FEEAA1C10923D00A0F05E /* MalfunctionTableViewCell.m */; };
 		7D1FEEAD1C10923D00A0F05E /* MalfunctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1FEEAB1C10923D00A0F05E /* MalfunctionTableViewCell.xib */; };
@@ -39,7 +41,6 @@
 		7D953E5C1C0BF6DD001243BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D953E5A1C0BF6DD001243BE /* LaunchScreen.storyboard */; };
 		7D953E7D1C0C2B75001243BE /* AlertShowWithString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D953E6A1C0C2B75001243BE /* AlertShowWithString.m */; };
 		7D953E7E1C0C2B75001243BE /* CHAnootation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D953E6C1C0C2B75001243BE /* CHAnootation.m */; };
-		7D953E7F1C0C2B75001243BE /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D953E6E1C0C2B75001243BE /* DatabaseHelper.m */; };
 		7D953E831C0C2B75001243BE /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D953E761C0C2B75001243BE /* KxMenu.m */; };
 		7D953E841C0C2B75001243BE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D953E781C0C2B75001243BE /* Reachability.m */; };
 		7D953E851C0C2B75001243BE /* StringUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D953E7A1C0C2B75001243BE /* StringUtility.m */; };
@@ -199,7 +200,6 @@
 		7D9540381C0C3A3B001243BE /* LineManageSwitchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9540371C0C3A3B001243BE /* LineManageSwitchVC.m */; };
 		7DA75ECD1C0FEEE600A17C36 /* MapLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75ECC1C0FEEE600A17C36 /* MapLocationViewController.m */; };
 		7DA75ED01C0FEF3E00A17C36 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75ECF1C0FEF3E00A17C36 /* LocationAnnotation.m */; };
-		7DA75ED51C101F3B00A17C36 /* libUMCheckUpdate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75ED31C101F3B00A17C36 /* libUMCheckUpdate.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +209,8 @@
 		1E272C6B1C1199FE007A1B20 /* DealProcessessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealProcessessTableViewCell.h; sourceTree = "<group>"; };
 		1E272C6C1C1199FE007A1B20 /* DealProcessessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealProcessessTableViewCell.m; sourceTree = "<group>"; };
 		1E272C6D1C1199FE007A1B20 /* DealProcessessTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealProcessessTableViewCell.xib; sourceTree = "<group>"; };
+		1ED3D4D21C200516001B2B85 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
+		1ED3D4D31C200516001B2B85 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
 		1ED4A6B51C1E6B5400844085 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1EE0D4C71C17D13F00A52A72 /* TabPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabPageController.h; sourceTree = "<group>"; };
 		1EE0D4C81C17D13F00A52A72 /* TabPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabPageController.m; sourceTree = "<group>"; };
@@ -218,8 +220,8 @@
 		1EE311291C16F24800494ED7 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
 		1EE804261C1E99B9001C2506 /* EstimateEquipmentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateEquipmentType.h; sourceTree = "<group>"; };
 		1EE804271C1E99B9001C2506 /* EstimateEquipmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateEquipmentType.m; sourceTree = "<group>"; };
-		1EE804291C1ECB26001C2506 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
-		1EE8042A1C1ECB26001C2506 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
+		1EE99B351C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertAndAffectedSitesViewController.h; sourceTree = "<group>"; };
+		1EE99B361C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertAndAffectedSitesViewController.m; sourceTree = "<group>"; };
 		7D1FEEA91C10923D00A0F05E /* MalfunctionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MalfunctionTableViewCell.h; sourceTree = "<group>"; };
 		7D1FEEAA1C10923D00A0F05E /* MalfunctionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MalfunctionTableViewCell.m; sourceTree = "<group>"; };
 		7D1FEEAB1C10923D00A0F05E /* MalfunctionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MalfunctionTableViewCell.xib; sourceTree = "<group>"; };
@@ -260,8 +262,6 @@
 		7D953E6A1C0C2B75001243BE /* AlertShowWithString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertShowWithString.m; path = Core/AlertShowWithString.m; sourceTree = "<group>"; };
 		7D953E6B1C0C2B75001243BE /* CHAnootation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHAnootation.h; path = Core/CHAnootation.h; sourceTree = "<group>"; };
 		7D953E6C1C0C2B75001243BE /* CHAnootation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHAnootation.m; path = Core/CHAnootation.m; sourceTree = "<group>"; };
-		7D953E6D1C0C2B75001243BE /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseHelper.h; path = Core/DatabaseHelper.h; sourceTree = "<group>"; };
-		7D953E6E1C0C2B75001243BE /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseHelper.m; path = Core/DatabaseHelper.m; sourceTree = "<group>"; };
 		7D953E751C0C2B75001243BE /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KxMenu.h; path = Core/KxMenu.h; sourceTree = "<group>"; };
 		7D953E761C0C2B75001243BE /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KxMenu.m; path = Core/KxMenu.m; sourceTree = "<group>"; };
 		7D953E771C0C2B75001243BE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Core/Reachability.h; sourceTree = "<group>"; };
@@ -472,8 +472,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED3D4D11C1FF504001B2B85 /* libUMCheckUpdate.a in Frameworks */,
 				6FF507FF7ACF1E640848DD46 /* libPods.a in Frameworks */,
-				7DA75ED51C101F3B00A17C36 /* libUMCheckUpdate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,8 +566,6 @@
 		7D953E641C0C2AEF001243BE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1EE804291C1ECB26001C2506 /* DatabaseHelper.h */,
-				1EE8042A1C1ECB26001C2506 /* DatabaseHelper.m */,
 				7D8936851C0EA2CF0075D947 /* HttpNetworkManager.h */,
 				7D8936861C0EA2CF0075D947 /* HttpNetworkManager.m */,
 				1EE804261C1E99B9001C2506 /* EstimateEquipmentType.h */,
@@ -576,8 +574,8 @@
 				7D953E6A1C0C2B75001243BE /* AlertShowWithString.m */,
 				7D953E6B1C0C2B75001243BE /* CHAnootation.h */,
 				7D953E6C1C0C2B75001243BE /* CHAnootation.m */,
-				7D953E6D1C0C2B75001243BE /* DatabaseHelper.h */,
-				7D953E6E1C0C2B75001243BE /* DatabaseHelper.m */,
+				1ED3D4D21C200516001B2B85 /* DatabaseHelper.h */,
+				1ED3D4D31C200516001B2B85 /* DatabaseHelper.m */,
 				7D953E751C0C2B75001243BE /* KxMenu.h */,
 				7D953E761C0C2B75001243BE /* KxMenu.m */,
 				7D953E771C0C2B75001243BE /* Reachability.h */,
@@ -760,6 +758,8 @@
 				7D1FEEA91C10923D00A0F05E /* MalfunctionTableViewCell.h */,
 				7D1FEEAA1C10923D00A0F05E /* MalfunctionTableViewCell.m */,
 				7D1FEEAB1C10923D00A0F05E /* MalfunctionTableViewCell.xib */,
+				1EE99B351C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.h */,
+				1EE99B361C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.m */,
 				7D953EBA1C0C2D48001243BE /* Allocate */,
 				7D953EC11C0C2D48001243BE /* LayAside */,
 				7D953ECB1C0C2D48001243BE /* Notarize */,
@@ -808,14 +808,14 @@
 			children = (
 				7D953ED31C0C2D48001243BE /* AlertInformationTableViewController.h */,
 				7D953ED41C0C2D48001243BE /* AlertInformationTableViewController.m */,
+				7D953ED81C0C2D48001243BE /* AffectedSitesViewController.h */,
+				7D953ED91C0C2D48001243BE /* AffectedSitesViewController.m */,
 				7D953ED51C0C2D48001243BE /* DealProcessessViewController.h */,
 				7D953ED61C0C2D48001243BE /* DealProcessessViewController.m */,
 				7D953ED71C0C2D48001243BE /* DealProcessessViewController.xib */,
 				1E272C6B1C1199FE007A1B20 /* DealProcessessTableViewCell.h */,
 				1E272C6C1C1199FE007A1B20 /* DealProcessessTableViewCell.m */,
 				1E272C6D1C1199FE007A1B20 /* DealProcessessTableViewCell.xib */,
-				7D953ED81C0C2D48001243BE /* AffectedSitesViewController.h */,
-				7D953ED91C0C2D48001243BE /* AffectedSitesViewController.m */,
 				7D953EDA1C0C2D48001243BE /* LocationViewController.h */,
 				7D953EDB1C0C2D48001243BE /* LocationViewController.m */,
 			);
@@ -1261,6 +1261,7 @@
 				7D95401B1C0C3463001243BE /* LoginViewController.m in Sources */,
 				7D9540151C0C310F001243BE /* AnimationViewController.m in Sources */,
 				7D953E8F1C0C2C9B001243BE /* RSLeftMenuViewController.m in Sources */,
+				1EE99B371C1FC94E00DE1085 /* AlertAndAffectedSitesViewController.m in Sources */,
 				7D9540331C0C37BA001243BE /* MalfunctionEntity.m in Sources */,
 				7D95400F1C0C2EF4001243BE /* UIImage+Circle.m in Sources */,
 				7D8936711C0E98740075D947 /* UserEntity.m in Sources */,
@@ -1277,9 +1278,8 @@
 				7D8936871C0EA2CF0075D947 /* HttpNetworkManager.m in Sources */,
 				7D953EE41C0C2D48001243BE /* CHTableViewCell.m in Sources */,
 				7D9540351C0C37BA001243BE /* UIConfig.m in Sources */,
+				1ED3D4D41C200516001B2B85 /* DatabaseHelper.m in Sources */,
 				7D953F071C0C2D48001243BE /* AffectedSitesViewController.m in Sources */,
-				1EE8042B1C1ECB26001C2506 /* DatabaseHelper.m in Sources */,
-				7D953E7F1C0C2B75001243BE /* DatabaseHelper.m in Sources */,
 				7D8936841C0E9CFE0075D947 /* MalfunctionListViewController.m in Sources */,
 				7D953EFC1C0C2D48001243BE /* MalfunctionLayAsideTableViewController.m in Sources */,
 				7D953EF31C0C2D48001243BE /* PatrolDispatchTableViewCell.m in Sources */,

@@ -11,7 +11,7 @@
 #import "KxMenu.h"
 #import "MapLocationViewController.h"
 #import "DealProcessessViewController.h"
-#import "AffectedSitesViewController.h"
+#import "AlertAndAffectedSitesViewController.h"
 #import "LocationViewController.h"
 #import "UploadImageWithPath.h"
 @interface MalfunctionDetailViewController ()
@@ -90,7 +90,7 @@
     bottomButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     bottomButton.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
     [bottomButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    [bottomButton setTitle:@"查看受影响的基站" forState:UIControlStateNormal];
+    [bottomButton setTitle:@"查看受影响的基站和告警信息" forState:UIControlStateNormal];
     [bottomButton addTarget:self action:@selector(showSites:) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, viewRect.size.width, 60)];
@@ -228,10 +228,6 @@
     viewController.siteName = [orderDetail objectForKey:@"siteName"];
     viewController.siteCode = [orderDetail objectForKey:@"siteCode"];
     [self.navigationController presentViewController:viewController animated:NO completion:nil];
-//    UIViewController *viewController = [[LocationViewController alloc] initWithCoordinate:location withLocationTitle:@"站点编号" withLocationSubtitle:[orderDetail objectForKey:@"siteName"]];
-//    viewController.title = @"基站位置";
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: viewController];
-//    [self.navigationController presentViewController:navigationController animated:YES completion:NULL];
 }
 
 - (void) showProcess
@@ -240,9 +236,10 @@
     viewController.orderId = orderId;
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
 - (void) showSites:(id)sender
 {
-    AffectedSitesViewController *viewController = [[AffectedSitesViewController alloc] init];
+    AlertAndAffectedSitesViewController *viewController = [[AlertAndAffectedSitesViewController alloc] init];
     viewController.orderId = orderId;
     viewController.orderCode = [orderDetail objectForKey:@"orderCode"];
     [self.navigationController pushViewController:viewController animated:YES];

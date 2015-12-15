@@ -8,11 +8,10 @@
 
 #import "AffectedSitesViewController.h"
 #import "AppDelegate.h"
-#import "AlertInformationTableViewController.h"
 
 @interface AffectedSitesViewController ()
 @property (nonatomic,retain)NSArray *deatilOrderArray;
-
+@property (nonatomic,retain)NSString *orderId;
 @end
 
 @implementation AffectedSitesViewController
@@ -23,23 +22,19 @@
     UILabel *label4;
 }
 
+- (instancetype)initWithOrderId:(NSString *)orderId{
+    self = [super init];
+    if(self){
+        _orderId = orderId;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"详细信息";
-//    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(goBack)];
-    UIBarButtonItem *reloadItem = [[UIBarButtonItem alloc]initWithTitle:@"告警信息" style:UIBarButtonItemStyleDone target:self action:@selector(alert)];
-    self.navigationItem.rightBarButtonItem = reloadItem;
-//    self.navigationItem.leftBarButtonItem = leftItem;
     self.tableView.tableFooterView = [[UIView alloc]init];
     [self initDetailOrderArray];
-}
-
-- (void)alert{
-    AlertInformationTableViewController *aiTVC = [[AlertInformationTableViewController alloc]init];
-    aiTVC.oredrCode = self.orderCode;
-    
-    [self.navigationController pushViewController:aiTVC animated:YES];
 }
 
 - (void)initDetailOrderArray{

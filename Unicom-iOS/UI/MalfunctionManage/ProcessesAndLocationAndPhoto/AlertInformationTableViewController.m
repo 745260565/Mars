@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 @interface AlertInformationTableViewController ()
+@property (nonatomic,retain)NSString *oredrCode;
 @property (nonatomic,retain)NSArray *alertDeatilArray;
 @end
 
@@ -24,15 +25,23 @@
     UILabel *label6;
 }
 
+- (instancetype)initWithOrderCode:(NSString *)orderCode{
+    self = [super init];
+    if(self){
+        _oredrCode = orderCode;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super viewDidLoad];
-    self.title = @"告警信息";
     
     self.alertDeatilArray = [[NSArray alloc]init];
     [self initAlertDeatilArray];
     self.tableView.tableFooterView = [[UIView alloc]init];
 }
+
 
 - (void)initAlertDeatilArray{
     NSMutableDictionary *requestDictionary = [[NSMutableDictionary alloc]init];
