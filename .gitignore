@@ -1,7 +1,7 @@
 .DS_Store
 Pods
 Podfile.lock
-xcuserdata
+*.xcuserdata
 .svn
 *.pch
 *.xcworkspace
