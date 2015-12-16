@@ -9,6 +9,10 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "AccordionView.h"
+#import "AllocateDetailViewController.h"
+#import "LayAsideDetailViewController.h"
+#import "TransactOrderDetailViewController.h"
+#import "DealOrderDetailViewController.h"
 
 @interface MainViewController () <UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @end
@@ -18,17 +22,17 @@
     UIImageView *imageView1;
     UIImageView *imageView2;
     UIImageView *imageView3;
-    UIButton *button1;
-    UIButton *button2;
-    UIButton *button3;
-    UIButton *button4;
     UIView *cView;
-    UIView *lView1;
-    UIView *lView2;
-    UIView *lView3;
-    UIView *lView4;
     UITableView *cTableView;
     NSArray *malfunctionDataArray;
+    
+    NSArray *categoryArray;
+    NSMutableArray *caegoriesTitleArray;
+    float titleViewWidth;
+    float titleViewHeight;
+    UIView *tabIndicatorView;
+    UIScrollView *tabScrollView;
+    NSInteger taskSelectedIndex;
 }
 
 
@@ -55,15 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (void) buildLayout
 {
     
@@ -147,7 +143,7 @@
     cButton.selected = YES;
     cButton.backgroundColor = [UIColor colorWithRed:16.0/255 green:164.0/255 blue:200.0/255 alpha:1.0f];
     [cButton addTarget:self action:@selector(choose3:) forControlEvents:UIControlEventTouchUpInside];
-    cView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 44*5+40)];
+    cView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 44*5+44)];
     [self buildCView];
     [av addHeader:aButton withView:aTableView];
     [av addHeader:bButton withView:bTableView];
@@ -161,84 +157,101 @@
 }
 
 - (void)buildCView{
-    cTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, kScreenWidth-20, 44*5)];
+    cTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 44, kScreenWidth-20, 44*5)];
     cTableView.bounces = NO;
-    [cView addSubview:cTableView];
-    cView.backgroundColor = [AppDelegate sharedApplicationDelegate].backgroundGrayColor;
-    CGFloat lWidth = (kScreenWidth-20)/4;
-    CGFloat lHeight = 40;
-    button1 = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, lWidth, lHeight)];
-    button2 = [[UIButton alloc]initWithFrame:CGRectMake(lWidth, 0,lWidth, lHeight)];
-    button3 = [[UIButton alloc]initWithFrame:CGRectMake(2*lWidth, 0, lWidth, lHeight)];
-    button4 = [[UIButton alloc]initWithFrame:CGRectMake(3*lWidth, 0, lWidth, lHeight)];
-    [button1 setTitle:@"故障" forState:UIControlStateNormal];
-    [button2 setTitle:@"线路" forState:UIControlStateNormal];
-    [button3 setTitle:@"隐患" forState:UIControlStateNormal];
-    [button4 setTitle:@"基站" forState:UIControlStateNormal];
-    [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [cView addSubview:button1];
-    [cView addSubview:button2];
-    [cView addSubview:button3];
-    [cView addSubview:button4];
-    lView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 35, lWidth, 5)];
-    lView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 35, lWidth, 5)];
-    lView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 35, lWidth, 5)];
-    lView4 = [[UIView alloc]initWithFrame:CGRectMake(0, 35, lWidth, 5)];
-    lView1.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
-    lView2.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
-    lView3.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
-    lView4.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
-    [button1 addSubview:lView1];
-    [button2 addSubview:lView2];
-    [button3 addSubview:lView3];
-    [button4 addSubview:lView4];
-    lView2.hidden = YES;
-    lView3.hidden = YES;
-    lView4.hidden = YES;
-    
-    [button1 addTarget:self action:@selector(tapButton1:) forControlEvents:UIControlEventTouchUpInside];
-    [button2 addTarget:self action:@selector(tapButton2:) forControlEvents:UIControlEventTouchUpInside];
-    [button3 addTarget:self action:@selector(tapButton3:) forControlEvents:UIControlEventTouchUpInside];
-    [button4 addTarget:self action:@selector(tapButton4:) forControlEvents:UIControlEventTouchUpInside];
     cTableView.delegate = self;
     cTableView.dataSource = self;
+    [cView addSubview:cTableView];
+    cView.backgroundColor = [AppDelegate sharedApplicationDelegate].backgroundGrayColor;
+    titleViewWidth = (kScreenWidth -20)/4;
+    titleViewHeight = 44;
+    tabScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth-20, 44)];
+    tabScrollView.showsHorizontalScrollIndicator = NO;
+    
+    caegoriesTitleArray = [NSMutableArray array];
+    categoryArray = @[@"故障",@"线路",@"隐患",@"基站"];
+    for (int i = 0; i<categoryArray.count; i++) {
+        NSString *title = [categoryArray objectAtIndex:i];
+        UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(i*titleViewWidth, 0, titleViewWidth, titleViewHeight)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, titleViewWidth, titleViewHeight)];
+        [label setText:title];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        if (i ==0) {
+            [label setTextColor:[AppDelegate sharedApplicationDelegate].tintColor];
+        }else{
+            label.textColor = [UIColor blackColor];
+        }
+        [caegoriesTitleArray addObject:label];
+        [titleView addSubview:label];
+        titleView.tag = i;
+        [titleView setUserInteractionEnabled:YES];
+        [titleView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tabTapHandler:)]];
+        [tabScrollView addSubview:titleView];
+    }
+    tabScrollView.contentSize = CGSizeMake(categoryArray.count*titleViewWidth, 44);
+    tabIndicatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 41, titleViewWidth, 3)];
+    [tabIndicatorView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [tabIndicatorView setBackgroundColor:[AppDelegate sharedApplicationDelegate].tintColor];
+    [tabScrollView addSubview:tabIndicatorView];
+    [cView addSubview:tabScrollView];
     [self loadTableViewData1];
 }
 
-- (void)tapButton1:(UIButton *)sender{
-    lView1.hidden = NO;
-    lView2.hidden = YES;
-    lView3.hidden = YES;
-    lView4.hidden = YES;
-    [self loadTableViewData1];
+- (void)tabTapHandler:(UITapGestureRecognizer*)gestureRecognizer{
+    NSInteger index = [[gestureRecognizer view] tag];
+    [self animateToTabAtIndex:index];
+    taskSelectedIndex = index;
+    switch (index) {
+        case 0:
+            [self loadTableViewData1];
+            break;
+        case 1:
+            [self loadTableViewData2];
+            break;
+        case 2:
+            [self loadTableViewData3];
+            break;
+        case 3:
+            [self loadTableViewData4];
+            break;
+        default:
+            break;
+    }
 }
 
-- (void)tapButton2:(UIButton *)sender{
-    lView1.hidden = YES;
-    lView2.hidden = NO;
-    lView3.hidden = YES;
-    lView4.hidden = YES;
-    [self loadTableViewData2];
+- (void)animateToTabAtIndex:(NSInteger)index {
+    [self animateToTabAtIndex:index animated:YES];
 }
 
-- (void)tapButton3:(UIButton *)sender{
-    lView1.hidden = YES;
-    lView2.hidden = YES;
-    lView3.hidden = NO;
-    lView4.hidden = YES;
-    [self loadTableViewData3];
+- (void)animateToTabAtIndex:(NSInteger)index animated:(BOOL)animated{
+    for (int i = 0; i<caegoriesTitleArray.count; i++) {
+        UILabel *label = [caegoriesTitleArray objectAtIndex:i];
+        if (i == index) {
+            label.textColor = [AppDelegate sharedApplicationDelegate].tintColor;
+        }else{
+            label.textColor = [UIColor blackColor];
+        }
+    }
+    CGFloat animateDuration = 0.4f;
+    if (!animated) {
+        animateDuration = 0.0f;
+    }
+    [UIView animateWithDuration:animateDuration animations:^{
+        tabIndicatorView.center = CGPointMake((index+0.5)*titleViewWidth, tabIndicatorView.center.y);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            CGSize screenSize = [UIScreen mainScreen].bounds.size;
+            float width = screenSize.width;
+            if (titleViewWidth*(index+1)>tabScrollView.contentOffset.x+width) {
+                [tabScrollView scrollRectToVisible:CGRectMake(titleViewWidth * (index + 1) - width, tabScrollView.contentOffset.y, width, titleViewHeight) animated:YES];
+            }else if (titleViewWidth * index  < tabScrollView.contentOffset.x) {
+                [tabScrollView scrollRectToVisible:CGRectMake(titleViewWidth * index, tabScrollView.contentOffset.y, width, titleViewHeight) animated:YES];
+            }
+        }
+    }];
 }
 
-- (void)tapButton4:(UIButton *)sender{
-    lView1.hidden = YES;
-    lView2.hidden = YES;
-    lView3.hidden = YES;
-    lView4.hidden = NO;
-    [self loadTableViewData4];
-}
+
 
 - (void)choose1:(UIButton*)sender{
     if (sender.selected) {
@@ -270,7 +283,7 @@
 - (void)loadTableViewData1{
     NSMutableDictionary *requestDictionary = [[NSMutableDictionary alloc]init];
     [requestDictionary setObject:@[@"待确认",@"已挂起",@"待挂起",@"待处理",@"处理中",@"已派单"] forKey:@"faultState"];
-    [requestDictionary setObject:@"5" forKey:@"size"];
+//    [requestDictionary setObject:@"5" forKey:@"size"];
     [requestDictionary setObject:@"true" forKey:@"myTask"];
     [HttpNetworkManager request:requestDictionary withPath:@"/api/fault/faultOrderInfo/list" targetClass:[NSDictionary class] completion:^(NSDictionary *resultDictionary, NSError *error) {
         if(error){
@@ -281,6 +294,58 @@
             [cTableView reloadData];
         }
     } withMethod:HttpMethodPost];
+}
+
+- (void)tableView:(nonnull UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    switch (taskSelectedIndex) {
+        case 0:
+        {
+            NSDictionary *orderDictionary = [malfunctionDataArray objectAtIndex:indexPath.row];
+            NSString *stateString = [orderDictionary objectForKey:@"faultState"];
+            if ([stateString isEqualToString:@"已派单"]) {
+                AllocateDetailViewController *viewController = [[AllocateDetailViewController alloc] initWithId:[orderDictionary objectForKey:@"id"] withHandleMenus:@[@"故障分派",@"退单"]];
+                viewController.completion = ^void (BOOL needRefresh){
+                    if (needRefresh) {
+                        [self loadTableViewData1];
+                    }
+                };
+                [self.navigationController pushViewController:viewController animated:YES];
+            }else if ([stateString isEqualToString:@"待处理"]||[stateString isEqualToString:@"处理中"]) {
+                TransactOrderDetailViewController *viewController = [[TransactOrderDetailViewController alloc] initWithId:[orderDictionary objectForKey:@"id"] withHandleMenus:@[@"故障保存",@"故障处理",@"退单",@"故障挂起"]];
+                viewController.completion = ^void (BOOL needRefresh){
+                    if (needRefresh) {
+                        [self loadTableViewData1];
+                    }
+                };
+                [self.navigationController pushViewController:viewController animated:YES];
+            }else if([stateString isEqualToString:@"待确认"]) {
+                DealOrderDetailViewController *viewController = [[DealOrderDetailViewController alloc] initWithId:[orderDictionary objectForKey:@"id"] withHandleMenus:@[@"故障确认",@"退单"]];
+                viewController.completion = ^void (BOOL needRefresh){
+                    if (needRefresh) {
+                        [self loadTableViewData1];
+                    }
+                };
+                [self.navigationController pushViewController:viewController animated:YES];
+            }else if([stateString isEqualToString:@"已挂起"]||[stateString isEqualToString:@"待挂起"]) {
+                NSArray *menuArray = nil;
+                if ([stateString isEqualToString:@"待挂起"]) {
+                    menuArray = @[@"通过",@"驳回"];
+                }else{
+                    menuArray = @[@"解除挂起"];
+                }
+                LayAsideDetailViewController *viewController = [[LayAsideDetailViewController alloc] initWithId:[orderDictionary objectForKey:@"id"] withHandleMenus:menuArray];
+                viewController.completion = ^void (BOOL needRefresh){
+                    if (needRefresh) {
+                        [self loadTableViewData1];
+                    }
+                };
+                [self.navigationController pushViewController:viewController animated:YES];
+            }
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)loadTableViewData2{
