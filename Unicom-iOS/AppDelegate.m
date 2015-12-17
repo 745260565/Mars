@@ -33,7 +33,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.tintColor = [UIColor colorWithRed:16.0/255 green:164.0/255 blue:231.0/255 alpha:1.0f];
+//    self.tintColor = [UIColor colorWithRed:16.0/255 green:164.0/255 blue:231.0/255 alpha:1.0f];
+    self.tintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav"]];
     [application setStatusBarStyle:UIStatusBarStyleDefault];
     self.backgroundGrayColor = [UIColor colorWithRed:203.0/255 green:207.0/255 blue:207.0/255 alpha:0.8f];
     self.window.tintColor = self.tintColor;
@@ -161,8 +162,6 @@
     [MobClick profileSignOff];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:kToken];
-    [defaults removeObjectForKey:@"username"];
-    [defaults removeObjectForKey:@"password"];
     self.currentUserEntity = nil;
     UIViewController *viewController = [[LoginViewController alloc]init];
     self.window.rootViewController = viewController;

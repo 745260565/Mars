@@ -368,6 +368,7 @@
         ideaTextField.text = chooseArray[indexPath.row];
     }else if(tag == 2){
         reasonTextField.text = reasonArray[indexPath.row];
+        subReasonTextField.text = @"";
     }else{
         subReasonTextField.text = reasonSubArray[indexPath.row];
     }

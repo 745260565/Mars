@@ -27,6 +27,7 @@
     NSArray *malfunctionDataArray;
     
     NSArray *categoryArray;
+    NSArray *iconArray;
     NSMutableArray *caegoriesTitleArray;
     float titleViewWidth;
     float titleViewHeight;
@@ -108,7 +109,7 @@
     [aButton addSubview:imageView1];
     [aButton addTarget:self action:@selector(choose1:) forControlEvents:UIControlEventTouchUpInside];
     //    av.backgroundColor = [UIColor orangeColor];
-    aButton.backgroundColor = [UIColor colorWithRed:16.0/255 green:164.0/255 blue:240.0/255 alpha:1.0f];
+    aButton.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
     
     UITableView *aTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 0, 44*2) style:UITableViewStylePlain];
 //    aTableView.backgroundColor = [UIColor redColor];
@@ -124,7 +125,7 @@
     imageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(kScreenWidth-20-20, 15, 20, 20)];
     imageView2.image = [UIImage imageNamed:@"iconfont-angledoubleright.png"];
     [bButton addSubview:imageView2];
-    bButton.backgroundColor = [UIColor colorWithRed:16.0/255 green:164.0/255 blue:220.0/255 alpha:1.0f];
+    bButton.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
     [bButton addTarget:self action:@selector(choose2:) forControlEvents:UIControlEventTouchUpInside];
     UITableView *bTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 0, 44*4) style:UITableViewStylePlain];
 //    bTableView.backgroundColor = [UIColor grayColor];
@@ -141,7 +142,7 @@
     imageView3.image = [UIImage imageNamed:@"iconfont-angledoubledown.png"];
     [cButton addSubview:imageView3];
     cButton.selected = YES;
-    cButton.backgroundColor = [UIColor colorWithRed:16.0/255 green:164.0/255 blue:200.0/255 alpha:1.0f];
+    cButton.backgroundColor = [AppDelegate sharedApplicationDelegate].tintColor;
     [cButton addTarget:self action:@selector(choose3:) forControlEvents:UIControlEventTouchUpInside];
     cView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 44*5+44)];
     [self buildCView];
@@ -170,10 +171,11 @@
     
     caegoriesTitleArray = [NSMutableArray array];
     categoryArray = @[@"故障",@"线路",@"隐患",@"基站"];
+    iconArray = @[@"sidebar_icon_healthreport",@"sidebar_icon_setting", @"sidebar-Email",@"sidebar-Friend"];
     for (int i = 0; i<categoryArray.count; i++) {
         NSString *title = [categoryArray objectAtIndex:i];
         UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(i*titleViewWidth, 0, titleViewWidth, titleViewHeight)];
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, titleViewWidth, titleViewHeight)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(titleViewWidth/2, 0, titleViewWidth/2, titleViewHeight)];
         [label setText:title];
         [label setTextAlignment:NSTextAlignmentCenter];
         if (i ==0) {
@@ -183,8 +185,10 @@
         }
         [caegoriesTitleArray addObject:label];
         [titleView addSubview:label];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(titleViewWidth/2-20, 12, 20, 20)];
+        imageView.image = [UIImage imageNamed:iconArray[i]];
+        [titleView addSubview:imageView];
         titleView.tag = i;
-        [titleView setUserInteractionEnabled:YES];
         [titleView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tabTapHandler:)]];
         [tabScrollView addSubview:titleView];
     }
@@ -370,6 +374,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identitfier = @"identifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identitfier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if(cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identitfier];
     }

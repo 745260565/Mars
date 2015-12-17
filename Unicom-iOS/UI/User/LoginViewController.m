@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 //@property (weak, nonatomic) IBOutlet UINavigationBar *loginNavigationBar;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 

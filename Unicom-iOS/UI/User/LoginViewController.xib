@@ -10,6 +10,7 @@
                 <outlet property="iconImage" destination="gTw-hS-GLw" id="zx0-Lk-pl0"/>
                 <outlet property="password" destination="qvn-XS-T5p" id="5FG-Cz-z7H"/>
                 <outlet property="userName" destination="O0d-uv-ImG" id="mli-do-PDj"/>
+                <outlet property="versionLabel" destination="Kce-yK-pqh" id="6IZ-rt-dRV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
