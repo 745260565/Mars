@@ -382,6 +382,14 @@
     cell.imageView.image = [UIImage imageNamed:@"fs_main_login_normal.png"];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [reasonTextField resignFirstResponder];
+    [subReasonTextField resignFirstResponder];
+    [ideaTextField resignFirstResponder];
+    [dealMethodTextField resignFirstResponder];
+    [remarkTextField resignFirstResponder];
+}
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [reasonTextField resignFirstResponder];

@@ -166,7 +166,6 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellIdentifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     NSArray *labelArray = @[@"提交日期:",@"受理编号:",@"故障分类:",@"故障类型:",@"故障级别:",@"站点名称:",@"站点编号:",@"基站等级:",@"基站地址:",@"所属区域:",@"申 报 人:",@"故障描述:"];
     NSString *string = [NSString string];
     NSInteger row = indexPath.row;

@@ -140,6 +140,10 @@
     [listView show];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [ideaTextField resignFirstResponder];
+}
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [ideaTextField resignFirstResponder];
