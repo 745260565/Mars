@@ -5,3 +5,4 @@ Podfile.lock
 .svn
 *.pch
 *.xcworkspace
+*.xcusersdate
